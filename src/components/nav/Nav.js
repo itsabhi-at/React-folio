@@ -3,6 +3,7 @@ import "./nav.css";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
+import { RiHeartsFill } from "react-icons/ri";
 
 function Nav() {
   const [activeNave, setActiveNave] = useState("#");
@@ -28,6 +29,13 @@ function Nav() {
         className={activeNave == "#experience" ? "active" : ""}
       >
         <BiBook />
+      </a>
+      <a
+        href="#portfolio"
+        onClick={() => setActiveNave("#portfolio")}
+        className={activeNave == "#portfolio" ? "active" : ""}
+      >
+        <RiHeartsFill />
       </a>
       <a
         href="#contact"

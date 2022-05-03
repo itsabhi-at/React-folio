@@ -17,6 +17,8 @@
   place-items: center;
 }
 .about__me img {
+  height: 400px;
+  object-fit: contain;
   border-radius: 2rem;
   overflow: hidden;
   transform: rotate(10deg);
@@ -29,6 +31,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+.about__content > p {
+  margin: 1rem auto 1rem auto;
 }
 .about__card {
   background: var(--color-bg-variant);

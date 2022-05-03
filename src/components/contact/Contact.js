@@ -3,7 +3,23 @@ import "./contact.css";
 import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+
 function Contact() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_3fbjtae",
+      "template_tgo1f5g",
+      form.current,
+      "fm75NUEytQErQLJ4y"
+    );
+    e.target.reset();
+  };
+
   return (
     <section id="contact">
       <h5>Get In Touch</h5>
@@ -35,7 +51,7 @@ function Contact() {
             </a>
           </article>
         </div>
-        <form action="">
+        <form ref={form} onSubmit={sendEmail}>
           <input
             type="text"
             name="name"
