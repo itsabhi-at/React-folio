@@ -20,24 +20,26 @@ function About() {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>3+ Years Working</small>
+              <small>2+ Years Working</small>
             </article>
             <article className="about__card">
               <FiUsers className="about__icon" />
-              <h5>Clients</h5>
-              <small>100+ Worldwide</small>
+              <h5>Certifications</h5>
+              <small>5+</small>
             </article>
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
-              <small>80+ Completed</small>
+              <small>20+ Completed</small>
             </article>
           </div>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            maiores laboriosam rem delectus iste autem quidem nemo, ducimus
-            quibusdam sint nesciunt dolores libero quasi vel natus minus vitae
-            cum temporibus.
+            Hey,Firstly Thankyou for visiting.I am a self-taught front-end
+            developer based out of a small town named Roorkee.I am interested in
+            working with new technologies and to improve those skills everyday.
+            Till now I have gained experience and worked with technologies like
+            ReactJs, VanillaJS, Bootstrap, Flutter and more.Also I do
+            wireframing and UI Design as a hobby as well.
           </p>
           <a href="#contact" className="btn btn-primary">
             Let's Talk

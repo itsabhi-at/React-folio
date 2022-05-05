@@ -1,47 +1,48 @@
 import React from "react";
 import "./portfolio.css";
 import POOCS from "../../assets/poocs.png";
+import WAVES from "../../assets/wave-music.png";
 
 const data = [
   {
     id: 1,
-    // image: IMG1,
-    title: "title",
+    // image: POOCS,
+    title: "Complete E-commerce Website",
     github: "linktogithub",
     demo: "demo-link",
   },
   {
     id: 2,
-    // image: IMG2,
-    title: "title",
-    github: "linktogithub",
-    demo: "demo-link",
+    image: WAVES,
+    title: "React Music Player",
+    github: "https://github.com/itsabhi-at/music-player-react",
+    demo: "https://react-wavesplayer.netlify.app/",
   },
   {
     id: 3,
     // image: IMG3,
-    title: "title",
+    title: "Photon Gallery",
     github: "linktogithub",
     demo: "demo-link",
   },
   {
     id: 4,
     // image: IMG4,
-    title: "title",
+    title: "Instagram Fluter",
     github: "linktogithub",
     demo: "demo-link",
   },
   {
     id: 5,
     // image: IMG5,
-    title: "title",
-    github: "linktogithub",
+    title: "Vanilla Portfolio",
+    github: "Vanilla Portfolio",
     demo: "demo-link",
   },
   {
     id: 6,
     // image: IMG5,
-    title: "title",
+    title: "Consultancy Website",
     github: "linktogithub",
     demo: "demo-link",
   },
@@ -58,14 +59,18 @@ function Portfolio() {
           return (
             <article key={dataset.id} className="portfolio__item">
               <div className="portfolio__item-image">
-                <img src={POOCS} alt="poocs" />
+                <img src={dataset.image} alt="poocs" />
                 <h3>{dataset.title}</h3>
                 <div className="portfolio__item-cta">
-                  <a href="#1" className="btn">
-                    {dataset.github}
+                  <a target={"_blank"} href={dataset.github} className="btn">
+                    Github
                   </a>
-                  <a href="#1" className="btn btn-primary" target="_blank">
-                    {dataset.demo}
+                  <a
+                    target={"_blank"}
+                    href={dataset.demo}
+                    className="btn btn-primary"
+                  >
+                    Demo Live
                   </a>
                 </div>
               </div>
