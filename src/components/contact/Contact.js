@@ -29,24 +29,36 @@ function Contact() {
           <article className="contact__option">
             <MdAlternateEmail className="contact__option-icon" />
             <h4>Email</h4>
-            <h5>dummyegator@gmail.com</h5>
-            <a target="_blank" href="mailto:itsabhi.at@gmail.com">
+            {/* <h5></h5> */}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="mailto:itsabhi.at@gmail.com"
+            >
               Send a Message
             </a>
           </article>
           <article className="contact__option">
             <AiOutlineWhatsApp className="contact__option-icon" />
             <h4>Whatsapp</h4>
-            <h5>dummyegator@gmail.com</h5>
-            <a target="_blank" href="mailto:itsabhi.at@gmail.com">
+            {/* <h5></h5> */}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://wa.me/918570967590?text="
+            >
               Send a Message
             </a>
           </article>
           <article className="contact__option">
             <BsLinkedin className="contact__option-icon" />
             <h4>LinkedIN</h4>
-            <h5>dummyegator@gmail.com</h5>
-            <a target="_blank" href="mailto:itsabhi.at@gmail.com">
+            {/* <h5></h5> */}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/abhishek-tomar-iiit/"
+            >
               Send a Message
             </a>
           </article>
