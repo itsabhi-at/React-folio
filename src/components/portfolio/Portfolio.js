@@ -2,7 +2,7 @@ import React from "react";
 import "./portfolio.css";
 const WAVES = require("../../assets/wave-music.png");
 const CRYPTO = require("../../assets/cryptoverse.png");
-
+const INSTA = require("../../assets/insta-clone.png");
 const data = [
   // {
   //   id: 1,
@@ -25,13 +25,13 @@ const data = [
     github: "https://github.com/itsabhi-at/Cryptoverse",
     demo: "https://reactfolio-cryptoverse.netlify.app/",
   },
-  // {
-  //   id: 4,
-  //   // image: IMG4,
-  //   title: "Instagram Fluter",
-  //   github: "linktogithub",
-  //   demo: "demo-link",
-  // },
+  {
+    id: 4,
+    image: INSTA,
+    title: "Instagram Flutter",
+    github: "https://github.com/itsabhi-at/insta-clone",
+    demo: "",
+  },
   // {
   //   id: 5,
   //   // image: IMG5,
@@ -73,7 +73,7 @@ function Portfolio() {
                   <a
                     rel="noreferrer"
                     target={"_blank"}
-                    href={dataset.demo}
+                    href={dataset.demo ? dataset.demo : void 0}
                     className="btn btn-primary"
                   >
                     Demo Live
