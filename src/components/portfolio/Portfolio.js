@@ -30,7 +30,7 @@ const data = [
     image: INSTA,
     title: "Instagram Flutter",
     github: "https://github.com/itsabhi-at/insta-clone",
-    demo: "",
+    demo: "https://flutter-insta.netlify.app/#/",
   },
   // {
   //   id: 5,
