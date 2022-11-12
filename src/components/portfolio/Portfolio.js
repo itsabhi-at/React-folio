@@ -3,6 +3,7 @@ import "./portfolio.css";
 const WAVES = require("../../assets/wave-music.png");
 const CRYPTO = require("../../assets/cryptoverse.png");
 const INSTA = require("../../assets/insta-clone.png");
+const INDINC = require("../../assets/indInc.png");
 const data = [
   // {
   //   id: 1,
@@ -32,13 +33,13 @@ const data = [
     github: "https://github.com/itsabhi-at/insta-clone",
     demo: "https://flutter-insta.netlify.app/#/",
   },
-  // {
-  //   id: 5,
-  //   // image: IMG5,
-  //   title: "Vanilla Portfolio",
-  //   github: "Vanilla Portfolio",
-  //   demo: "demo-link",
-  // },
+  {
+    id: 5,
+    image: INDINC,
+    title: "Independent Inc.",
+    github: "https://github.com/itsabhi-at/independent-web",
+    demo: "https://independent-web.vercel.app",
+  },
   // {
   //   id: 6,
   //   // image: IMG5,
