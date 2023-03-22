@@ -29,7 +29,7 @@ const data = [
   },
   {
     id: 4,
-    image: ARCHSLATE,
+    image: ARCH,
     title: "Archslate",
     github: "https://github.com/itsabhi-at/archSlate",
     demo: "https://arch-slate.vercel.app/",
