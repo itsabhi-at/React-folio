@@ -4,6 +4,7 @@ const WAVES = require("../../assets/wave-music.png");
 const CRYPTO = require("../../assets/cryptoverse.png");
 const INSTA = require("../../assets/insta-clone.png");
 const INDINC = require("../../assets/indInc.png");
+const ARCH = require("../../assets/archslate.png");
 const data = [
   // {
   //   id: 1,
@@ -28,13 +29,20 @@ const data = [
   },
   {
     id: 4,
+    image: ARCHSLATE,
+    title: "Archslate",
+    github: "https://github.com/itsabhi-at/archSlate",
+    demo: "https://arch-slate.vercel.app/",
+  },
+  {
+    id: 5,
     image: INSTA,
     title: "Instagram Flutter",
     github: "https://github.com/itsabhi-at/insta-clone",
     demo: "https://flutter-insta.netlify.app/#/",
   },
   {
-    id: 5,
+    id: 6,
     image: INDINC,
     title: "Independent Inc.",
     github: "https://github.com/itsabhi-at/independent-web",

@@ -12,35 +12,35 @@ function Nav() {
       <a
         href="#"
         onClick={() => setActiveNave("#")}
-        className={activeNave == "#" ? "active" : ""}
+        className={activeNave === "#" ? "active" : ""}
       >
         <AiOutlineHome />
       </a>
       <a
         href="#about"
         onClick={() => setActiveNave("#about")}
-        className={activeNave == "#about" ? "active" : ""}
+        className={activeNave === "#about" ? "active" : ""}
       >
         <AiOutlineUser />
       </a>
       <a
         href="#experience"
         onClick={() => setActiveNave("#experience")}
-        className={activeNave == "#experience" ? "active" : ""}
+        className={activeNave === "#experience" ? "active" : ""}
       >
         <BiBook />
       </a>
       <a
         href="#portfolio"
         onClick={() => setActiveNave("#portfolio")}
-        className={activeNave == "#portfolio" ? "active" : ""}
+        className={activeNave === "#portfolio" ? "active" : ""}
       >
         <RiHeartsFill />
       </a>
       <a
         href="#contact"
         onClick={() => setActiveNave("#contact")}
-        className={activeNave == "#contact" ? "active" : ""}
+        className={activeNave === "#contact" ? "active" : ""}
       >
         <BiMessageSquareDetail />
       </a>
