@@ -10,7 +10,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
   return (
     <nav>
       <a
-        href="#"
+        // href="#"
         onClick={() => setActiveNave("#")}
         className={
           // viewAbout || viewContact || viewExp || viewPort === true
@@ -20,28 +20,28 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         <AiOutlineHome />
       </a>
       <a
-        href="#about"
+        // href="#about"
         onClick={() => setActiveNave("#about")}
         className={viewAbout === true ? "active" : ""}
       >
         <AiOutlineUser />
       </a>
       <a
-        href="#experience"
+        // href="#experience"
         onClick={() => setActiveNave("#experience")}
         className={viewExp === true ? "active" : ""}
       >
         <BiBook />
       </a>
       <a
-        href="#portfolio"
+        // href="#portfolio"
         onClick={() => setActiveNave("#portfolio")}
         className={viewPort === true ? "active" : ""}
       >
         <RiHeartsFill />
       </a>
       <a
-        href="#contact"
+        // href="#contact"
         onClick={() => setActiveNave("#contact")}
         className={viewContact === true ? "active" : ""}
       >
