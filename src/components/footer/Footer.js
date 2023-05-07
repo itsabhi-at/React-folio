@@ -9,7 +9,7 @@ function Footer() {
       <a href="" className="footer__logo">
         ThankYou
       </a>
-      <ul className="permalinks">
+      {/* <ul className="permalinks">
         <li>
           <a href="">Home</a>
         </li>
@@ -28,7 +28,7 @@ function Footer() {
         <li>
           <a href="http://">Contact</a>
         </li>
-      </ul>
+      </ul> */}
       <div className="footer__socials">
         <a href="">
           <AiOutlineInstagram />

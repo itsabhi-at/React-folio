@@ -5,42 +5,46 @@ import { BiBook } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { RiHeartsFill } from "react-icons/ri";
 
-function Nav() {
+function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
   const [activeNave, setActiveNave] = useState("#");
   return (
     <nav>
       <a
         href="#"
         onClick={() => setActiveNave("#")}
-        className={activeNave === "#" ? "active" : ""}
+        className={
+          viewAbout || viewContact || viewExp || viewPort === true
+            ? ""
+            : "active"
+        }
       >
         <AiOutlineHome />
       </a>
       <a
         href="#about"
         onClick={() => setActiveNave("#about")}
-        className={activeNave === "#about" ? "active" : ""}
+        className={viewAbout === true ? "active" : ""}
       >
         <AiOutlineUser />
       </a>
       <a
         href="#experience"
         onClick={() => setActiveNave("#experience")}
-        className={activeNave === "#experience" ? "active" : ""}
+        className={viewExp === true ? "active" : ""}
       >
         <BiBook />
       </a>
       <a
         href="#portfolio"
         onClick={() => setActiveNave("#portfolio")}
-        className={activeNave === "#portfolio" ? "active" : ""}
+        className={viewPort === true ? "active" : ""}
       >
         <RiHeartsFill />
       </a>
       <a
         href="#contact"
         onClick={() => setActiveNave("#contact")}
-        className={activeNave === "#contact" ? "active" : ""}
+        className={viewContact === true ? "active" : ""}
       >
         <BiMessageSquareDetail />
       </a>

@@ -3,14 +3,24 @@ import "./header.css";
 import React from "react";
 import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
+import { motion } from "framer-motion";
+import { container, titleAnim } from "../animation";
 
-function Header() {
+function Header({ element }) {
   return (
     <header>
-      <div className="container header__container">
-        <h5>Hello I'm</h5>
-        <h1>Abhishek Tomar </h1>
-        <h5 className="text-light">Front End Developer</h5>
+      <motion.div
+        ref={element}
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="container header__container"
+      >
+        <motion.h5 variants={titleAnim}>Hello I'm</motion.h5>
+        <motion.h2 variants={titleAnim}>Abhishek Tomar </motion.h2>
+        <motion.h5 variants={titleAnim} className="text-light">
+          Front End Developer
+        </motion.h5>
         <CTA />
         <HeaderSocials />
         <div className="me">
@@ -19,7 +29,7 @@ function Header() {
         <a href="#contact" className="scroll__down">
           Scroll Down
         </a>
-      </div>
+      </motion.div>
     </header>
   );
 }

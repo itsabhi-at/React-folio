@@ -5,8 +5,12 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+import { useScroll } from "../scrollAnimationHook";
+import { scrollReveal } from "../animation";
 
-function Contact() {
+function Contact({ element, controls }) {
+  // const [controls, element] = useScroll();
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -21,7 +25,13 @@ function Contact() {
   };
 
   return (
-    <section id="contact">
+    <motion.section
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      id="contact"
+    >
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
       <div className="container contact__container">
@@ -83,7 +93,7 @@ function Contact() {
           </button>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

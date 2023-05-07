@@ -4,12 +4,49 @@ import ME from "../../assets/me.png";
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
-function About() {
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import { scrollReveal } from "../animation";
+
+function About({ element, controls }) {
+  const titleAnim = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: { duration: 1 },
+    },
+  };
   return (
-    <section id="about">
-      <h5>Get to Know </h5>
-      <h2>About Me</h2>
-      <div className="container about__container">
+    <motion.section
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      id="about"
+    >
+      <motion.h5
+        // variants={titleAnim}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 1 },
+        }}
+      >
+        Get to Know
+      </motion.h5>
+      <motion.h2 variants={titleAnim} initial="hidden" animate="show">
+        About Me
+      </motion.h2>
+      <motion.div
+        variants={titleAnim}
+        initial="hidden"
+        animate="show"
+        className="container about__container"
+      >
         <div className="about__me">
           <div className="about__me">
             <img src={ME} alt="" />
@@ -45,8 +82,8 @@ function About() {
             Let's Talk
           </a>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 

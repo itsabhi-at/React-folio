@@ -1,9 +1,18 @@
 import React from "react";
 import "./experience.css";
 import { BsPatchCheckFill } from "react-icons/bs";
-function Experience() {
+import { motion } from "framer-motion";
+import { scrollReveal } from "../animation";
+
+function Experience({ element, controls }) {
   return (
-    <section id="experience">
+    <motion.section
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      id="experience"
+    >
       <h5>What Skills I Have</h5>
       <h2>My Experience</h2>
       <div className="container experience__container">
@@ -81,7 +90,7 @@ function Experience() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

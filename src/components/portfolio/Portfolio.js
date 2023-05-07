@@ -1,10 +1,14 @@
 import React from "react";
 import "./portfolio.css";
+import { motion } from "framer-motion";
+import { scrollReveal } from "../animation";
+import { useScroll } from "../scrollAnimationHook";
 const WAVES = require("../../assets/wave-music.png");
 const CRYPTO = require("../../assets/cryptoverse.png");
 const INSTA = require("../../assets/insta-clone.png");
 const INDINC = require("../../assets/indInc.png");
 const ARCH = require("../../assets/archslate.png");
+
 const data = [
   // {
   //   id: 1,
@@ -57,9 +61,15 @@ const data = [
   // },
 ];
 
-function Portfolio() {
+function Portfolio({ element, controls }) {
   return (
-    <section id="portfolio">
+    <motion.section
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      id="portfolio"
+    >
       <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
 
@@ -93,7 +103,7 @@ function Portfolio() {
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
