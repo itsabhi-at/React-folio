@@ -13,9 +13,8 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         href="#"
         onClick={() => setActiveNave("#")}
         className={
-          viewAbout || viewContact || viewExp || viewPort === true
-            ? ""
-            : "active"
+          // viewAbout || viewContact || viewExp || viewPort === true
+          viewHeader === false ? "" : "active"
         }
       >
         <AiOutlineHome />
