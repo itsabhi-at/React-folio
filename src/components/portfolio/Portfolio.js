@@ -1,8 +1,9 @@
 import React from "react";
 import "./portfolio.css";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { scrollReveal } from "../animation";
 import { useScroll } from "../scrollAnimationHook";
+import { useInView } from "react-intersection-observer";
 const WAVES = require("../../assets/wave-music.png");
 const CRYPTO = require("../../assets/cryptoverse.png");
 const INSTA = require("../../assets/insta-clone.png");
@@ -61,7 +62,15 @@ const data = [
   // },
 ];
 
-function Portfolio({ element, controls }) {
+function Portfolio({}) {
+  // const controls = useAnimation();
+  // const [element, view] = useInView({ threshold: 0.4 });
+
+  // if (view) {
+  //   controls.start("show");
+  // } else {
+  //   controls.start("hidden");
+  // }
   return (
     <motion.section id="portfolio">
       <h5>My Recent Work</h5>

@@ -36,7 +36,11 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
       <a
         // href="#portfolio"
         onClick={() => setActiveNave("#portfolio")}
-        className={viewPort === true ? "active" : ""}
+        className={
+          viewAbout || viewContact || viewExp || viewHeader === true
+            ? ""
+            : "active"
+        }
       >
         <RiHeartsFill />
       </a>
