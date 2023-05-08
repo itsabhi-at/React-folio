@@ -20,7 +20,7 @@ function App() {
   const [elementContact, controlsContact, viewContact] = useScroll();
   return (
     <>
-      <AnimatePresence>
+      <main className="main">
         <Header element={elementHeader} />
         <Nav
           viewHeader={viewHeader}
@@ -34,7 +34,7 @@ function App() {
         <Portfolio controls={controlsPort} element={elementPort} />
         <Contact controls={controlsContact} element={elementContact} />
         <Footer />
-      </AnimatePresence>
+      </main>
     </>
   );
 }
