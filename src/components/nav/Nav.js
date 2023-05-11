@@ -4,11 +4,8 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { RiHeartsFill } from "react-icons/ri";
-import { HashLink } from "react-router-hash-link";
 
 function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
-  const [activeNave, setActiveNave] = useState("#");
-
   return (
     <nav>
       <div
