@@ -1,4 +1,4 @@
-import ME from "../../assets/me.png";
+import ME from "../../assets/me.svg";
 import "./header.css";
 import React from "react";
 import CTA from "./CTA";

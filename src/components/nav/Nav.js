@@ -4,38 +4,37 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { RiHeartsFill } from "react-icons/ri";
+import { HashLink } from "react-router-hash-link";
 
 function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
   const [activeNave, setActiveNave] = useState("#");
+
   return (
     <nav>
-      <a
+      <div
         // href="#"
-        onClick={() => setActiveNave("#")}
-        className={
-          // viewAbout || viewContact || viewExp || viewPort === true
-          viewHeader === false ? "" : "active"
-        }
+
+        className={viewHeader === false ? "" : "active"}
       >
         <AiOutlineHome />
-      </a>
-      <a
+      </div>
+      <div
         // href="#about"
-        onClick={() => setActiveNave("#about")}
+
         className={viewAbout === true ? "active" : ""}
       >
         <AiOutlineUser />
-      </a>
-      <a
+      </div>
+      <div
         // href="#experience"
-        onClick={() => setActiveNave("#experience")}
+
         className={viewExp === true ? "active" : ""}
       >
         <BiBook />
-      </a>
-      <a
+      </div>
+      <div
         // href="#portfolio"
-        onClick={() => setActiveNave("#portfolio")}
+
         className={
           viewAbout || viewContact || viewExp || viewHeader === true
             ? ""
@@ -43,14 +42,14 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         }
       >
         <RiHeartsFill />
-      </a>
-      <a
+      </div>
+      <div
         // href="#contact"
-        onClick={() => setActiveNave("#contact")}
+        // onClick={() => setActiveNave("#contact")}
         className={viewContact === true ? "active" : ""}
       >
         <BiMessageSquareDetail />
-      </a>
+      </div>
     </nav>
   );
 }
