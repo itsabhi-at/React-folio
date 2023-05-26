@@ -6,47 +6,42 @@ import { BiMessageSquareDetail } from "react-icons/bi";
 import { RiHeartsFill } from "react-icons/ri";
 
 function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
+  const [ActiveNave, setActiveNave] = useState("#");
   return (
     <nav>
-      <div
-        // href="#"
+      <a href="#">
+        <div className={viewHeader === false ? "" : "active"}>
+          <AiOutlineHome />
+        </div>
+      </a>
+      <a href="#about">
+        <div className={viewAbout === true ? "active" : ""}>
+          <AiOutlineUser />
+        </div>
+      </a>
+      <a href="#experience">
+        <div className={viewExp === true ? "active" : ""}>
+          <BiBook />
+        </div>
+      </a>
 
-        className={viewHeader === false ? "" : "active"}
-      >
-        <AiOutlineHome />
-      </div>
-      <div
-        // href="#about"
+      <a href="#portfolio">
+        <div
+          className={
+            viewAbout || viewContact || viewExp || viewHeader === true
+              ? ""
+              : "active"
+          }
+        >
+          <RiHeartsFill />
+        </div>
+      </a>
 
-        className={viewAbout === true ? "active" : ""}
-      >
-        <AiOutlineUser />
-      </div>
-      <div
-        // href="#experience"
-
-        className={viewExp === true ? "active" : ""}
-      >
-        <BiBook />
-      </div>
-      <div
-        // href="#portfolio"
-
-        className={
-          viewAbout || viewContact || viewExp || viewHeader === true
-            ? ""
-            : "active"
-        }
-      >
-        <RiHeartsFill />
-      </div>
-      <div
-        // href="#contact"
-        // onClick={() => setActiveNave("#contact")}
-        className={viewContact === true ? "active" : ""}
-      >
-        <BiMessageSquareDetail />
-      </div>
+      <a href="#contact" onClick={() => setActiveNave("#contact")}>
+        <div className={viewContact === true ? "active" : ""}>
+          <BiMessageSquareDetail />
+        </div>
+      </a>
     </nav>
   );
 }
