@@ -26,7 +26,7 @@ function Footer() {
           <a href="http://">Contact</a>
         </li>
       </ul> */}
-      <div className="footer__socials">
+      {/* <div className="footer__socials">
         <a href="">
           <AiOutlineInstagram />
         </a>
@@ -36,7 +36,7 @@ function Footer() {
         <a href="">
           <BsTwitter />
         </a>
-      </div>
+      </div> */}
     </footer>
   );
 }
