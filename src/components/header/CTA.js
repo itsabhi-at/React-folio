@@ -1,6 +1,7 @@
 import React from "react";
 import CV from "../../assets/CV.pdf";
 import { motion } from "framer-motion";
+import { handleNavClick } from "../../utils/scrollUtils";
 
 function CTA() {
   const button = {
@@ -17,7 +18,12 @@ function CTA() {
       <motion.a variants={button} href={CV} download className="btn">
         Download CV
       </motion.a>
-      <motion.a variants={button} href="#contact" className="btn btn-primary">
+      <motion.a
+        variants={button}
+        href="#contact"
+        className="btn btn-primary"
+        onClick={(e) => handleNavClick(e, "#contact")}
+      >
         Let's Talk
       </motion.a>
     </div>

@@ -7,6 +7,7 @@ import { VscFolderLibrary } from "react-icons/vsc";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { scrollReveal } from "../animation";
+import { handleNavClick } from "../../utils/scrollUtils";
 
 function About({ element, controls }) {
   const titleAnim = {
@@ -78,7 +79,11 @@ function About({ element, controls }) {
             ReactJs, VanillaJS, Bootstrap, Flutter and more.Also I do
             wireframing and UI Design as a hobby as well.
           </p>
-          <a href="#contact" className="btn btn-primary">
+          <a
+            href="#contact"
+            className="btn btn-primary"
+            onClick={(e) => handleNavClick(e, "#contact")}
+          >
             Let's Talk
           </a>
         </div>

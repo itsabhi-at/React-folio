@@ -5,10 +5,11 @@ import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
 import { motion } from "framer-motion";
 import { container, titleAnim } from "../animation";
+import { handleNavClick } from "../../utils/scrollUtils";
 
 function Header({ element }) {
   return (
-    <header>
+    <header id="home">
       <motion.div
         ref={element}
         variants={container}
@@ -26,7 +27,11 @@ function Header({ element }) {
         <div className="me">
           <img src={ME} alt="" />
         </div>
-        <a href="#contact" className="scroll__down">
+        <a
+          href="#contact"
+          className="scroll__down"
+          onClick={(e) => handleNavClick(e, "#contact")}
+        >
           Scroll Down
         </a>
       </motion.div>

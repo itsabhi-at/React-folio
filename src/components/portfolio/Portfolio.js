@@ -62,17 +62,15 @@ const data = [
   // },
 ];
 
-function Portfolio({}) {
-  // const controls = useAnimation();
-  // const [element, view] = useInView({ threshold: 0.4 });
-
-  // if (view) {
-  //   controls.start("show");
-  // } else {
-  //   controls.start("hidden");
-  // }
+function Portfolio({ element, controls }) {
   return (
-    <motion.section id="portfolio">
+    <motion.section
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      id="portfolio"
+    >
       <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
 
