@@ -80,6 +80,14 @@
 @media screen and (max-width: 600px) {
   .portfolio__container {
     grid-template-columns: 1fr;
-    gap: 1 rem;
+    gap: 1rem;
+  }
+
+  .portfolio__item {
+    margin-bottom: 1rem;
+  }
+
+  .portfolio__item-image img {
+    height: 180px;
   }
 }

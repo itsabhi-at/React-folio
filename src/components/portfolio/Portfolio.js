@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./portfolio.css";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { scrollReveal } from "../animation";
-import { useScroll } from "../scrollAnimationHook";
-import { useInView } from "react-intersection-observer";
 const WAVES = require("../../assets/wave-music.png");
 const CRYPTO = require("../../assets/cryptoverse.png");
 const INSTA = require("../../assets/insta-clone.png");
@@ -63,6 +61,27 @@ const data = [
 ];
 
 function Portfolio({ element, controls }) {
+  // Fallback animation trigger for mobile
+  useEffect(() => {
+    const portfolioSection = document.querySelector("#portfolio");
+    if (portfolioSection) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              controls.start("show");
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      );
+
+      observer.observe(portfolioSection);
+
+      return () => observer.disconnect();
+    }
+  }, [controls]);
+
   return (
     <motion.section
       ref={element}
@@ -70,6 +89,12 @@ function Portfolio({ element, controls }) {
       animate={controls}
       initial="hidden"
       id="portfolio"
+      style={{
+        minHeight: "100vh",
+        padding: "2rem 0",
+        position: "relative",
+        zIndex: 1,
+      }}
     >
       <h5>My Recent Work</h5>
       <h2 className="center-align">Portfolio</h2>
