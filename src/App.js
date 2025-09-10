@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Nav from "./components/nav/Nav";
 import Portfolio from "./components/portfolio/Portfolio";
+import ScrollProgress from "./components/ScrollProgress";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { useScroll } from "./components/scrollAnimationHook";
@@ -20,6 +21,7 @@ function App() {
   const [elementContact, controlsContact, viewContact] = useScroll();
   return (
     <>
+      <ScrollProgress />
       <main className="main">
         <Header element={elementHeader} />
         <Nav

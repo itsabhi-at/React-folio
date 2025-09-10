@@ -4,9 +4,13 @@ import ME from "../../assets/about.svg";
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-import { scrollReveal } from "../animation";
+import { motion } from "framer-motion";
+import {
+  scrollReveal,
+  staggerContainer,
+  fadeInUp,
+  scaleIn,
+} from "../animation";
 import { handleNavClick } from "../../utils/scrollUtils";
 
 function About({ element, controls }) {
@@ -39,7 +43,12 @@ function About({ element, controls }) {
       >
         Get to Know
       </motion.h5>
-      <motion.h2 variants={titleAnim} initial="hidden" animate="show">
+      <motion.h2
+        className="center-align"
+        variants={titleAnim}
+        initial="hidden"
+        animate="show"
+      >
         About Me
       </motion.h2>
       <motion.div
@@ -54,38 +63,46 @@ function About({ element, controls }) {
           </div>
         </div>
         <div className="about__content">
-          <div className="about__cards">
-            <article className="about__card">
+          <motion.div
+            className="about__cards"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.article className="about__card" variants={scaleIn}>
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>2+ Years Working</small>
-            </article>
-            <article className="about__card">
+              <small>4+ Years Working</small>
+            </motion.article>
+            <motion.article className="about__card" variants={scaleIn}>
               <FiUsers className="about__icon" />
               <h5>Certifications</h5>
               <small>5+</small>
-            </article>
-            <article className="about__card">
+            </motion.article>
+            <motion.article className="about__card" variants={scaleIn}>
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
               <small>20+ Completed</small>
-            </article>
-          </div>
-          <p>
+            </motion.article>
+          </motion.div>
+          <motion.p variants={fadeInUp}>
             Hey,Firstly Thankyou for visiting.I am a self-taught front-end
             developer based out of a small town named Roorkee.I am interested in
             working with new technologies and to improve those skills everyday.
             Till now I have gained experience and worked with technologies like
             ReactJs, VanillaJS, Bootstrap, Flutter and more.Also I do
             wireframing and UI Design as a hobby as well.
-          </p>
-          <a
+          </motion.p>
+          <motion.a
             href="#contact"
             className="btn btn-primary"
             onClick={(e) => handleNavClick(e, "#contact")}
+            variants={fadeInUp}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Let's Talk
-          </a>
+          </motion.a>
         </div>
       </motion.div>
     </motion.section>

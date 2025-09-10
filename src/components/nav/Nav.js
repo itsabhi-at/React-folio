@@ -7,10 +7,12 @@ import { RiHeartsFill } from "react-icons/ri";
 
 function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
   const [activeNav, setActiveNav] = useState("#home");
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const handleNavClickLocal = (e, section) => {
     e.preventDefault();
     setActiveNav(section);
+    setIsScrolling(true);
 
     // Get the target element
     const targetElement = document.querySelector(section);
@@ -24,20 +26,63 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         behavior: "smooth",
       });
     }
+
+    // Reset scrolling flag after animation completes
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 1000);
   };
 
-  // Update active nav based on scroll position with a small delay
+  // Update active nav based on scroll position (only when not manually scrolling)
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    if (!isScrolling) {
       if (viewHeader) setActiveNav("#home");
       else if (viewAbout) setActiveNav("#about");
       else if (viewExp) setActiveNav("#experience");
       else if (viewPort) setActiveNav("#portfolio");
       else if (viewContact) setActiveNav("#contact");
-    }, 100); // Small delay to prevent conflicts with manual clicks
+    }
+  }, [viewHeader, viewAbout, viewExp, viewPort, viewContact, isScrolling]);
 
-    return () => clearTimeout(timeoutId);
-  }, [viewHeader, viewAbout, viewExp, viewPort, viewContact]);
+  // Additional scroll listener for more reliable desktop detection
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isScrolling) return;
+
+      const sections = [
+        "#home",
+        "#about",
+        "#experience",
+        "#portfolio",
+        "#contact",
+      ];
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.querySelector(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveNav(sections[i]);
+          break;
+        }
+      }
+    };
+
+    // Throttle scroll events for better performance
+    let timeoutId;
+    const throttledScroll = () => {
+      if (timeoutId) return;
+      timeoutId = setTimeout(() => {
+        handleScroll();
+        timeoutId = null;
+      }, 100);
+    };
+
+    window.addEventListener("scroll", throttledScroll);
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [isScrolling]);
 
   return (
     <nav>
@@ -46,7 +91,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         onClick={(e) => handleNavClickLocal(e, "#home")}
         className={activeNav === "#home" ? "active" : ""}
       >
-        <div className={viewHeader === true ? "active" : ""}>
+        <div>
           <AiOutlineHome />
         </div>
       </a>
@@ -55,7 +100,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         onClick={(e) => handleNavClickLocal(e, "#about")}
         className={activeNav === "#about" ? "active" : ""}
       >
-        <div className={viewAbout === true ? "active" : ""}>
+        <div>
           <AiOutlineUser />
         </div>
       </a>
@@ -64,7 +109,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         onClick={(e) => handleNavClickLocal(e, "#experience")}
         className={activeNav === "#experience" ? "active" : ""}
       >
-        <div className={viewExp === true ? "active" : ""}>
+        <div>
           <BiBook />
         </div>
       </a>
@@ -73,7 +118,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         onClick={(e) => handleNavClickLocal(e, "#portfolio")}
         className={activeNav === "#portfolio" ? "active" : ""}
       >
-        <div className={viewPort === true ? "active" : ""}>
+        <div>
           <RiHeartsFill />
         </div>
       </a>
@@ -82,7 +127,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         onClick={(e) => handleNavClickLocal(e, "#contact")}
         className={activeNav === "#contact" ? "active" : ""}
       >
-        <div className={viewContact === true ? "active" : ""}>
+        <div>
           <BiMessageSquareDetail />
         </div>
       </a>

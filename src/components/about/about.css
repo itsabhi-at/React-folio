@@ -7,26 +7,64 @@
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 2rem;
-  background: var(--color-primary-variant);
-  /* background: linear-gradient(
-    45deg,
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-variant),
+    var(--color-accent),
+    transparent
+  );
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.about__me::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
     transparent,
     var(--color-primary),
     transparent
-  ); */
-  display: grid;
-  place-items: center;
+  );
+  animation: rotate 4s linear infinite;
+  z-index: 1;
 }
+
 .about__me img {
   height: 400px;
   object-fit: contain;
   border-radius: 2rem;
   overflow: hidden;
-  /* transform: rotate(10deg); */
-  /* transition: var(--transition); */
+  position: relative;
+  z-index: 2;
+  transition: var(--transition);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
-.about__me img:hover {
-  transform: rotate(0);
+
+.about__me:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.about__me:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .about__cards {
   display: grid;
@@ -39,15 +77,42 @@
 .about__card {
   background: var(--color-bg-variant);
   border: 1px solid transparent;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   padding: 2rem;
   text-align: center;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
+
+.about__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-variant),
+    transparent
+  );
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.about__card:hover::before {
+  opacity: 1;
+}
+
 .about__card:hover {
   background: transparent;
-  border-color: var(--color-primary-variant);
+  border-color: var(--color-primary);
   cursor: default;
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
 }
 .about__icon {
   color: var(--color-primary);

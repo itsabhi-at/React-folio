@@ -10,12 +10,38 @@
   border-radius: 2rem;
   border: 1px solid transparent;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.experience__container > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-variant),
+    transparent
+  );
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.experience__container > div:hover::before {
+  opacity: 1;
 }
 
 .experience__container > div:hover {
   background: transparent;
-  border-color: var(--color-primary-variant);
+  border-color: var(--color-primary);
   cursor: default;
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
 }
 
 .experience__container > div h3 {

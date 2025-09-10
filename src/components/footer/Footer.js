@@ -5,10 +5,7 @@ import { GrSnapchat } from "react-icons/gr";
 import "./footer.css";
 function Footer() {
   return (
-    <footer>
-      <a href="" className="footer__logo">
-        ThankYou
-      </a>
+    <footer className="footer">
       {/* <ul className="permalinks">
         <li>
           <a href="">Home</a>
@@ -39,9 +36,6 @@ function Footer() {
         <a href="">
           <BsTwitter />
         </a>
-      </div>
-      <div className="footer__copyright">
-        <small>&copy; Abhishek.All rights Reserved</small>
       </div>
     </footer>
   );
