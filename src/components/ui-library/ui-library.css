@@ -415,6 +415,36 @@
 }
 
 /* MutateAccordion trigger icon – sized to match ~15px title text */
+.mutate-input-field__input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.mutate-input-field__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.mutate-input-field__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary);
+}
+.mutate-input-field__input.mutate-input-field__input--error {
+  border-color: #ef4444;
+}
+.mutate-input-field__input.mutate-input-field__input--error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px rgba(239, 68, 68, 0.5);
+}
+.mutate-input-field__input.mutate-input-field__input--with-icon {
+  padding-left: 3rem;
+}
+
 .mutate-accordion__icon {
   width: 1.5rem;
   height: 1.5rem;

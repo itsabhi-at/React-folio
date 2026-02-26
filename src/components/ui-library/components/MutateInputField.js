@@ -76,14 +76,13 @@ function MutateInputField({
   }, []);
 
   const inputClassName = [
-    "w-full border bg-white/10 p-4 rounded-lg outline-none text-white text-sm placeholder:text-white/40 transition-colors",
-    "focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[var(--color-bg)]",
-    showError
-      ? "border-red-500 focus:border-red-500 focus:ring-red-500/50"
-      : "border-white/20 focus:border-primary",
-    placeholderImage ? "pl-12" : "",
+    "mutate-input-field__input",
+    showError && "mutate-input-field__input--error",
+    placeholderImage && "mutate-input-field__input--with-icon",
     inputClassNameProp || "",
-  ].filter(Boolean).join(" ");
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   const labelStyle = {
     color: showError ? "#ef4444" : labelColor,
@@ -116,12 +115,12 @@ function MutateInputField({
   }
 
   return (
-    <div className={["relative space-y-2", className].filter(Boolean).join(" ")}>
+    <div className={`relative space-y-2 ${className || ""}`.trim()}>
       {labelText != null && labelText !== "" && (
         <label
           htmlFor={inputId}
           style={labelStyle}
-          className={["block text-sm text-white", labelClassName].filter(Boolean).join(" ")}
+          className={`block text-sm text-white ${labelClassName || ""}`.trim()}
         >
           {labelText}
           {isFieldRequired && (
@@ -146,7 +145,7 @@ function MutateInputField({
         <p
           id={`${name}-error`}
           role="alert"
-          className={["text-red-500 text-[13px] mt-1", errorClassName].filter(Boolean).join(" ")}
+          className={`text-red-500 text-[13px] mt-1 ${errorClassName || ""}`.trim()}
         >
           {errorMessage}
         </p>

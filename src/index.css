@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Ensure Tailwind scans all JS/JSX in src (fixes classes in ui-library components) */
+@source "./**/*.{js,jsx}";
+
 /* Portfolio theme: use in Tailwind as text-primary, bg-bg, etc. */
 @theme {
   --color-primary: #00d4ff;
