@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./portfolio.css";
 import { motion } from "framer-motion";
 import { scrollReveal } from "../animation";
@@ -61,33 +61,12 @@ const data = [
 ];
 
 function Portfolio({ element, controls }) {
-  // Fallback animation trigger for mobile
-  useEffect(() => {
-    const portfolioSection = document.querySelector("#portfolio");
-    if (portfolioSection) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              controls.start("show");
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
-      );
-
-      observer.observe(portfolioSection);
-
-      return () => observer.disconnect();
-    }
-  }, [controls]);
-
   return (
     <motion.section
       ref={element}
       variants={scrollReveal}
-      animate={controls}
-      initial="hidden"
+      initial="show"
+      animate="show"
       id="portfolio"
       style={{
         minHeight: "100vh",

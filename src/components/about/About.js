@@ -27,8 +27,8 @@ function About({ element, controls }) {
     <motion.section
       ref={element}
       variants={scrollReveal}
-      animate={controls}
-      initial="hidden"
+      initial="show"
+      animate="show"
       id="about"
     >
       <motion.h5

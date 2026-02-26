@@ -1,4 +1,19 @@
+@import "tailwindcss";
+
+/* Portfolio theme: use in Tailwind as text-primary, bg-bg, etc. */
+@theme {
+  --color-primary: #00d4ff;
+  --color-primary-variant: rgba(0, 212, 255, 0.4);
+  --color-bg: #0a0a0a;
+  --color-bg-variant: #1a1a2e;
+  --color-secondary: #ff6b6b;
+  --color-accent: #4ecdc4;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+
+@import "./components/ui-library/ui-library.css";
 
 .main {
   width: 100vw;

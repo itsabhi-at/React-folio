@@ -1,0 +1,25 @@
+{
+  "name": "mutate-ui",
+  "version": "1.0.3",
+  "description": "Reusable UI components with Mutate prefix – Tailwind, Headless UI",
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "components"
+  ],
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "tailwind",
+    "headless-ui",
+    "ui-library",
+    "mutate-ui"
+  ],
+  "author": "Abhishek Tomar",
+  "license": "MIT"
+}

@@ -4,8 +4,9 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { RiHeartsFill } from "react-icons/ri";
+import { RiCodeSSlashLine } from "react-icons/ri";
 
-function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
+function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewUiLibrary, viewContact }) {
   const [activeNav, setActiveNav] = useState("#home");
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -40,9 +41,10 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
       else if (viewAbout) setActiveNav("#about");
       else if (viewExp) setActiveNav("#experience");
       else if (viewPort) setActiveNav("#portfolio");
+      else if (viewUiLibrary) setActiveNav("#ui-library");
       else if (viewContact) setActiveNav("#contact");
     }
-  }, [viewHeader, viewAbout, viewExp, viewPort, viewContact, isScrolling]);
+  }, [viewHeader, viewAbout, viewExp, viewPort, viewUiLibrary, viewContact, isScrolling]);
 
   // Additional scroll listener for more reliable desktop detection
   useEffect(() => {
@@ -54,6 +56,7 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
         "#about",
         "#experience",
         "#portfolio",
+        "#ui-library",
         "#contact",
       ];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -120,6 +123,16 @@ function Nav({ viewHeader, viewAbout, viewPort, viewExp, viewContact }) {
       >
         <div>
           <RiHeartsFill />
+        </div>
+      </a>
+      <a
+        href="#ui-library"
+        onClick={(e) => handleNavClickLocal(e, "#ui-library")}
+        className={activeNav === "#ui-library" ? "active" : ""}
+        aria-label="UI Library"
+      >
+        <div>
+          <RiCodeSSlashLine />
         </div>
       </a>
       <a

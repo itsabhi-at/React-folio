@@ -6,7 +6,6 @@ import { BsLinkedin } from "react-icons/bs";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
-import { useScroll } from "../scrollAnimationHook";
 import { scrollReveal } from "../animation";
 
 function Contact({ element, controls }) {
@@ -28,8 +27,8 @@ function Contact({ element, controls }) {
     <motion.section
       ref={element}
       variants={scrollReveal}
-      animate={controls}
-      initial="hidden"
+      initial="show"
+      animate="show"
       id="contact"
     >
       <h5>Get In Touch</h5>

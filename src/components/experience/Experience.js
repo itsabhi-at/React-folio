@@ -9,8 +9,8 @@ function Experience({ element, controls }) {
     <motion.section
       ref={element}
       variants={scrollReveal}
-      animate={controls}
-      initial="hidden"
+      initial="show"
+      animate="show"
       id="experience"
     >
       <h5>What Skills I Have</h5>
