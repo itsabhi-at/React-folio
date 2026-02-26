@@ -1,7 +1,4 @@
 import React from "react";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { BsTwitter } from "react-icons/bs";
-import { GrSnapchat } from "react-icons/gr";
 import "./footer.css";
 function Footer() {
   return (
