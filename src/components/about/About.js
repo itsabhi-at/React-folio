@@ -62,7 +62,12 @@ function About({ element, controls }) {
             <img src={ME} alt="" />
           </div>
         </div>
-        <div className="about__content">
+        <motion.div
+          variants={titleAnim}
+          initial="hidden"
+          animate="show"
+          className="about__content"
+        >
           <motion.div
             className="about__cards"
             variants={staggerContainer}
@@ -103,7 +108,7 @@ function About({ element, controls }) {
           >
             Let's Talk
           </motion.a>
-        </div>
+        </motion.div>
       </motion.div>
     </motion.section>
   );

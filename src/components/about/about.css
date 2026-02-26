@@ -18,7 +18,6 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  transition: var(--transition);
 }
 
 .about__me::before {
@@ -34,7 +33,6 @@
     var(--color-primary),
     transparent
   );
-  animation: rotate 4s linear infinite;
   z-index: 1;
 }
 
@@ -45,26 +43,7 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
-  transition: var(--transition);
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-}
-
-.about__me:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl), var(--shadow-glow);
-}
-
-.about__me:hover img {
-  transform: scale(1.1);
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 .about__cards {
   display: grid;
